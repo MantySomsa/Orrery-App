@@ -128,10 +128,62 @@ p li {
   position: absolute;
   font-family: "Poppins", sans-serif;
   right: 20px;
-  top: 100px;
+  top: 40px;
   width: 300px;
   background-color: black;
   padding: 20px;
   box-shadow: 0 4px 8px white(0, 0, 0, 0.1);
   color: white;
+}
+
+/* AI bot */
+#chatbotContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+#chatbotMessages {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  color: #f5ebe0;
+  font-family: "CoolveticaRg";
+}
+
+#chatbotMessages p {
+  font-family: "CoolveticaRg", sans-serif; /* Font for chat messages */
+}
+
+#userInputContainer {
+  display: flex;
+}
+
+#userInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+#sendBtn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#sendBtn:hover {
+  background-color: #219653;
 }
