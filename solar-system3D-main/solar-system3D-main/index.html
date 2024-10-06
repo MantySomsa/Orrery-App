@@ -19,7 +19,7 @@
     />
     <meta
       name="description"
-      content="The Solar System 3D Visualization project is an interactive web-based application that allows users to explore the Solar System in a three-dimensional environment. The project is developed using the Three.js library, which provides powerful tools for creating 3D content on the web. Users can witness the rotation of planets around the Sun and their self-rotation, as well as enjoy the beauty of space in this immersive experience."
+      content="The Solar System 3D Visualization project is an interactive web-based application that allows users to explore the Solar System in a three-dimensional environment."
     />
     <meta
       name="keywords"
@@ -38,20 +38,6 @@
       content="https://ankitjha2603.github.io/solar-system3D/"
     />
     <meta property="og:type" content="website" />
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-4J64SC1QY7"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-4J64SC1QY7");
-    </script>
 
     <link rel="icon" type="image/png" href="./image/solar-system.png" />
     <script type="text/javascript" src="./min.js/dat.gui.min.js"></script>
@@ -119,6 +105,13 @@
       <button id="closeInfo" class="close-button">&times;</button>
     </div>
 
+    <div id="chatbotContainer">
+      <div id="chatbotMessages"></div>
+      <div id="userInputContainer">
+        <input type="text" id="userInput" placeholder="Type a message" />
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
     <script src="./js/solarSystem.js" type="module"></script>
   </body>
 </html>
