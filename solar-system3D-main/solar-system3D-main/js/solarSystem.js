@@ -1104,3 +1104,63 @@ async function fetchSpaceNews() {
 window.onload = () => {
   fetchSpaceNews();
 };
+
+// AI
+export async function sendMessage() {
+  const userInput = document.getElementById("userInput").value;
+  const messagesDiv = document.getElementById("chatbotMessages");
+
+  if (userInput.trim() === "") return;
+
+  // Display user message
+  const userMessage = document.createElement("p");
+  userMessage.innerText = `You: ${userInput}`;
+  messagesDiv.appendChild(userMessage);
+
+  // Show a "thinking" message while waiting
+  const botThinkingMessage = document.createElement("p");
+  botThinkingMessage.innerText = "Bot is thinking...";
+  messagesDiv.appendChild(botThinkingMessage);
+
+  const options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [
+        {
+          parts: [{ text: userInput }],
+        },
+      ],
+    }),
+  };
+
+  try {
+    const response = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBUeiXPXthQePqcyqEcP3ySo6fG8Fqt7k4",
+      options
+    );
+    const data = await response.json();
+
+    botThinkingMessage.remove();
+
+    if (data.candidates && data.candidates.length > 0) {
+      const botMessage = document.createElement("p");
+      botMessage.innerText = `Bot: ${data.candidates[0].content.parts[0].text}`;
+      messagesDiv.appendChild(botMessage);
+    } else {
+      throw new Error("No candidates found in the response.");
+    }
+  } catch (error) {
+    console.error("Error communicating with AI:", error);
+    botThinkingMessage.remove();
+
+    const errorMessage = document.createElement("p");
+    errorMessage.innerText = "Bot: Error occurred, please try again.";
+    messagesDiv.appendChild(errorMessage);
+  }
+
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+// Add event listener for the send button
+document.getElementById("sendBtn").addEventListener("click", sendMessage);
