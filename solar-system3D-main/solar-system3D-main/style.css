@@ -1,0 +1,137 @@
+body {
+  overflow: hidden;
+  margin: 0px;
+}
+
+/* Tooltip styles */
+#tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  pointer-events: none;
+  display: block;
+  z-index: 10;
+  font-size: 12px;
+}
+
+/* Info panel styles */
+.info-panel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 350px;
+  background: rgba(0, 0, 0, 0.9); /* Darker background for a space feel */
+  color: #f0f0f0; /* Lighter text color */
+  padding: 15px;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Glowing effect */
+  display: none; /* Hidden by default */
+  z-index: 10;
+  backdrop-filter: blur(10px); /* Add a blur effect to background */
+}
+
+.info-panel {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: light;
+}
+
+.info-panel h2 {
+  font-weight: 350;
+  margin-top: 0;
+  font-size: 1.5em; /* Larger title size */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Glow effect on title */
+}
+
+.info-panel p {
+  line-height: 1.5; /* Improve readability */
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); /* Glow effect on text */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  margin-top: 10px; /* Space between title and buttons */
+}
+
+.planet-button {
+  background-color: transparent; /* Transparent background */
+  color: #f0f0f0; /* Light text color */
+  border: 2px solid rgb(46, 46, 236); /* Thin blue border */
+  border-radius: 5px; /* Slightly rounded corners */
+  padding: 15px 25px; /* Padding for buttons */
+  margin: 5px 0; /* Space between buttons */
+  position: relative; /* For pseudo-elements */
+  overflow: hidden; /* Clip content to the button area */
+}
+
+.planet-button:before,
+.planet-button:after {
+  content: "";
+  position: absolute;
+  width: 20px; /* Width of the octagonal shapes */
+  height: 20px; /* Height of the octagonal shapes */
+  background-color: rgb(49, 49, 253); /* Background color for octagons */
+  clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  ); /* Octagon shape */
+}
+
+.planet-button:before {
+  left: -10px; /* Position on the left */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+}
+
+.planet-button:after {
+  right: -10px; /* Position on the right */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+}
+
+.planet-button:hover {
+  border-color: white; /* Change border to white on hover */
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #ccc;
+}
+
+.planetDiameter {
+  font-size: 14px;
+}
+
+p li {
+  font-size: 13px;
+}
+
+/* Updates */
+.news-update {
+  position: absolute;
+  font-family: "Poppins", sans-serif;
+  right: 20px;
+  top: 100px;
+  width: 300px;
+  background-color: black;
+  padding: 20px;
+  box-shadow: 0 4px 8px white(0, 0, 0, 0.1);
+  color: white;
+}

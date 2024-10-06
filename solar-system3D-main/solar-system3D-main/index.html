@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar-system</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="author" content="ankitjha2603" />
+    <meta name="robots" content="index, follow" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="The Solar System 3D Visualization project is an interactive web-based application that allows users to explore the Solar System in a three-dimensional environment. The project is developed using the Three.js library, which provides powerful tools for creating 3D content on the web. Users can witness the rotation of planets around the Sun and their self-rotation, as well as enjoy the beauty of space in this immersive experience."
+    />
+    <meta
+      name="keywords"
+      content="three.js, solar system, 3D, space, planets, astronomy, stars, sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto"
+    />
+    <meta
+      property="og:title"
+      content="Solar System : Explore the 3D Solar System"
+    />
+    <meta
+      property="og:description"
+      content="The Solar System 3D Visualization project is an interactive web-based application that allows users to explore the Solar System in a three-dimensional environment."
+    />
+    <meta
+      property="og:url"
+      content="https://ankitjha2603.github.io/solar-system3D/"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4J64SC1QY7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-4J64SC1QY7");
+    </script>
+
+    <link rel="icon" type="image/png" href="./image/solar-system.png" />
+    <script type="text/javascript" src="./min.js/dat.gui.min.js"></script>
+  </head>
+  <body>
+    <!-- Info Panel -->
+    <div id="infoPanel" class="info-panel">
+      <h2 id="planetName">Planet Name</h2>
+
+      <!-- Button Container -->
+      <div class="button-container">
+        <button class="planet-button" id="encyclopediaBtn">ENCYCLOPEDIA</button>
+        <button class="planet-button" id="structureBtn">STRUCTURE</button>
+        <button class="planet-button" id="quizBtn">TAKE A QUIZ!</button>
+      </div>
+
+      <button id="closeInfo" class="close-button">&times;</button>
+
+      <!-- Encyclopedia Information Container -->
+      <div id="encyclopediaInfo" style="display: none">
+        <h3>ENCYCLOPEDIA</h3>
+        <p><strong>Diameter:</strong> <span id="planetDiameter"></span> km</p>
+        <p><strong>Mass:</strong> <span id="planetMass"></span> ×10²⁴ kg</p>
+        <p><strong>Gravity:</strong> <span id="planetGravity"></span> m/s²</p>
+        <p>
+          <strong>Distance from Sun:</strong>
+          <span id="planetDistance"></span> units
+        </p>
+        <hr />
+        <h3><strong>Interesting Facts:</strong></h3>
+        <div id="planetFacts"></div>
+
+        <button
+          id="goBackBtnEncyclopedia"
+          class="planet-button"
+          style="margin-top: 10px"
+        >
+          GO BACK
+        </button>
+      </div>
+      <div id="structureDisplay" style="display: none">
+        <h3>Structure Layers</h3>
+        <div id="layers"></div>
+
+        <button
+          id="goBackBtnStructure"
+          class="planet-button"
+          style="margin-top: 10px"
+        >
+          GO BACK
+        </button>
+      </div>
+
+      <div id="quizContainer" style="display: none">
+        <h3 id="quizQuestion"></h3>
+        <div id="quizAnswers"></div>
+        <button id="nextQuestionBtn" style="display: none">
+          Next Question
+        </button>
+      </div>
+    </div>
+    <div id="newsUpdate" class="news-update">
+      <h2>Newest News!</h2>
+      <p class="newsUpdate"></p>
+      <button id="closeInfo" class="close-button">&times;</button>
+    </div>
+
+    <script src="./js/solarSystem.js" type="module"></script>
+  </body>
+</html>
